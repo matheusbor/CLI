@@ -45,10 +45,28 @@ class StudentRepository{
 
   }
 
-  Future<void> update(Student student){}
-
-  Future<void> delete(int id){}
-
-
+  Future<void> update(Student student) async{
+    final response = await http.put(Uri.parse("http://192.168.10.103:8080/students/${student.id}"), 
+    body: student.toJson(), 
+    headers: {
+      "content type": "application/json"
+    });//como eniamos um corpo temos que enviar algo informando que é um content type json, se não vai enviar como texto
+  
+    if(response.statusCode != 200){
+    throw Exception();
   }
-}
+  }
+
+  Future<void> delete(int id) async{
+    final response = await http.delete(Uri.parse("http://192.168.10.103:8080/students/$id"));
+  
+    if(response.statusCode != 200){
+    throw Exception();
+  }
+  }
+
+  
+  }
+
+
+  
