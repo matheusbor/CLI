@@ -22,7 +22,7 @@ class Phone {
   factory Phone.fromMap(Map<String, dynamic> mapa){
     return Phone(
       ddd: mapa["ddd"] ?? 0, 
-      phone: mapa["phone"] ?? "0");
+      phone: mapa["phone"] ?? "");
   }
 
   factory Phone.fromJson(String json) => Phone.fromMap(jsonDecode(json));

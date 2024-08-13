@@ -23,5 +23,5 @@ class City {
       id: mapa["id"] ?? 0,
        name: mapa["name"] ?? "");
   }
-
+  factory City.fromJson(String json) => City.fromMap(jsonDecode(json));
 }
