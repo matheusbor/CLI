@@ -36,7 +36,7 @@ class StudentRepository{
     final response = await http.post(Uri.parse("http://192.168.10.103:8080/students"), 
     body: student.toJson(), 
     headers: {
-      "content type": "application/json"
+      "Content-Type": "application/json"
     });//como eniamos um corpo temos que enviar algo informando que é um content type json, se não vai enviar como texto
   
     if(response.statusCode != 200){

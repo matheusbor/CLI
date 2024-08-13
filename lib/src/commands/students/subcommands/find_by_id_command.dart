@@ -16,8 +16,27 @@ FindByIdCommand(this.studentRepository){
 }
 
   @override
-  void run(){
-    print("rodando findById");
+  void run() async{
+    
+    if(argResults?["id"] == null){
+      print("Por favor envie o id com --id='number' ou -i 'number'");
+      return;
+    }
+   
+
+    final id = int.tryParse(argResults?["id"]);
+     print("Id digitado para busca: $id");
+
+     final responseStudent = await studentRepository.findById(id!);
+    print("");
+     print("Aluno: ${responseStudent.name}");
+     print("Id: ${responseStudent.id}");
+     print("Idade: ${responseStudent.age ?? "Não informado"}");
+     print("Endereço: ${responseStudent.address}");
+     print("Cursos: ${responseStudent.nameCourses}");
+     print("");
+  
+
   }
 
 }

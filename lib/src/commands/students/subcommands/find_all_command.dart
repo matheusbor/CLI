@@ -30,11 +30,19 @@ class FindAllCommand extends Command {
     if(choice?.toLowerCase() == 's'){
       for(var student in students){
         print("Aluno: ${student.name}");
+        print("Id: ${student.id}");
+        print("Idade: ${student.age ?? "Não Informado"}");
+        print("Endereço: ${student.address}");
         print("Cursos: ${student.nameCourses}");
+        print("");
       }
     } else{
       for(var student in students){
         print("Aluno: ${student.name}");
+        print("Id: ${student.id}");
+        print("Idade: ${student.age ?? "Não Informado"}");
+        print("Endereço: ${student.address}");
+        print("");
 
       }
     }
