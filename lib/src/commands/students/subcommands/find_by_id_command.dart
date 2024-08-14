@@ -18,7 +18,7 @@ FindByIdCommand(this.studentRepository){
   @override
   void run() async{
     
-    if(argResults?["id"] == null){
+    if(argResults?["id"] == null){//ordem errada
       print("Por favor envie o id com --id='number' ou -i 'number'");
       return;
     }

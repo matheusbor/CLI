@@ -26,6 +26,7 @@ class StudentRepository{
   }
 
     if(alunos.body == "{}"){//alunos.body.isEmpty json rest server não permite que body seja realmente vazio
+      print("Id não existe");
       throw Exception();
     }
 
@@ -49,7 +50,7 @@ class StudentRepository{
     final response = await http.put(Uri.parse("http://192.168.10.103:8080/students/${student.id}"), 
     body: student.toJson(), 
     headers: {
-      "content type": "application/json"
+      "Content-Type": "application/json"
     });//como eniamos um corpo temos que enviar algo informando que é um content type json, se não vai enviar como texto
   
     if(response.statusCode != 200){
